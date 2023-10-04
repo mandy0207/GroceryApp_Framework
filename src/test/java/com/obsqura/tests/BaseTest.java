@@ -38,6 +38,6 @@ public class BaseTest {
 	@AfterClass
 	public void TearDown() {
 		System.out.println("I am closing browser");
-		driver.quit();
+		//driver.quit();
 	}
 }

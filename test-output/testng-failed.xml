@@ -5,7 +5,9 @@
     <classes>
       <class name="com.obsqura.tests.LoginTest">
         <methods>
+          <include name="TearDown"/>
           <include name="MyLoginTest"/>
+          <include name="InitializeDriver"/>
         </methods>
       </class> <!-- com.obsqura.tests.LoginTest -->
     </classes>
