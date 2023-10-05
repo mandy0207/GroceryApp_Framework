@@ -5,10 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import com.obsqura.utilities.PageUtility;
+
+public class LoginPage  extends PageUtility{
 
 	WebDriver driver;
 	public LoginPage(WebDriver driver) {
+		super(driver);
 		this.driver= driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -26,8 +29,8 @@ public class LoginPage {
 	private WebElement loginBtn;
 	
 	public void Login() {
-		userNameField.sendKeys("admin");
-		passwordField.sendKeys("admin");
-		loginBtn.click();
+		SetTextBox(userNameField, "admin");
+		SetTextBox(passwordField, "admin");
+		ClickElement(loginBtn);	
 	}
 }

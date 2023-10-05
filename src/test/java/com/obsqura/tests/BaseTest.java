@@ -9,6 +9,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.obsqura.pages.ExpenseCategoryPage;
+import com.obsqura.pages.HomePage;
+import com.obsqura.pages.LoginPage;
+
 public class BaseTest {
 	WebDriver driver;
 
@@ -32,7 +36,17 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
+		InitializePages();
 	
+	}
+	public LoginPage lp;
+	public 	HomePage hp;
+	public ExpenseCategoryPage ecp;
+	
+	public void InitializePages() {
+		 lp = new LoginPage(driver);
+		 hp = new HomePage(driver);
+		 ecp = new ExpenseCategoryPage(driver);
 	}
 	
 	@AfterClass
