@@ -8,7 +8,7 @@ import com.obsqura.pages.HomePage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.utilities.DateUtility;
 
-public class ManageExpense extends BaseTest {
+public class CreateDeleteExpense extends BaseTest {
 
 	
 	@Test
@@ -18,13 +18,15 @@ public class ManageExpense extends BaseTest {
 		
 		String currentDate= DateUtility.getCurrentDate();
 		String alertText = ecp.CreateExpense(currentDate);
-		System.out.println(alertText);
+		
 		/**
 		 * Validation for Expense Creation
 		 */
 		Assert.assertEquals(alertText, "Alert!", "Alert validation failed");
-		ecp.DeleteExpense(currentDate);
-		
-		
+		String deletionText = ecp.DeleteExpense(currentDate);
+		/**
+		 * Validation for Expense Deletion
+		 */
+		Assert.assertEquals(deletionText,  "Expense Category Deleted Successfully");
 	}
 }

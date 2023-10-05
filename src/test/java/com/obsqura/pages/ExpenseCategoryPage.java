@@ -58,7 +58,7 @@ public class ExpenseCategoryPage extends PageUtility {
 
 	}
 	
-	public void DeleteExpense(String currentDate) {
+	public String DeleteExpense(String currentDate) {
 		String name = "Obsqura";
 		ClickElement(search);
 		SetTextBox(searchInput, name + currentDate);
@@ -66,7 +66,10 @@ public class ExpenseCategoryPage extends PageUtility {
 		ClickElement(deleteBtn);
 		AcceptAlert();
 		String deleteText = GetElemenText(deleteAlertText);
-		System.out.println(deleteText);
+		System.out.println(deleteText.split("Alert!")[1].trim());
+		return deleteText.split("Alert!")[1].trim();
+		
+		
 	}
 
 }

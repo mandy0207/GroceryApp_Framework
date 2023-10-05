@@ -18,8 +18,6 @@ public class BaseTest {
 
 	@BeforeClass
 	public void InitializeDriver() {
-		
-		System.out.println("I am in Driver Initialization");
 		String browserName = "Chrome";
 		if (browserName.equals("Chrome")) {
 		  driver = new ChromeDriver();
@@ -51,7 +49,6 @@ public class BaseTest {
 	
 	@AfterClass
 	public void TearDown() {
-		System.out.println("I am closing browser");
-		//driver.quit();
+		driver.quit();
 	}
 }
