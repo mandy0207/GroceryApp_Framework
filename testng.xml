@@ -12,5 +12,11 @@
       <class name="com.obsqura.tests.CreateDeleteExpense"/>
     </classes>
   </test> 
+  
+      <test  name="UpdatePayment">
+    <classes>
+      <class name="com.obsqura.tests.UpdatePayment"/>
+    </classes>
+  </test> 
 </suite> 
 
