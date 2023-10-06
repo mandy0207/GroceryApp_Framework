@@ -12,12 +12,14 @@ import org.testng.annotations.BeforeClass;
 import com.obsqura.pages.ExpenseCategoryPage;
 import com.obsqura.pages.HomePage;
 import com.obsqura.pages.LoginPage;
+import com.obsqura.pages.ManagePaymentMethods;
 
 public class BaseTest {
 	WebDriver driver;
 
 	@BeforeClass
 	public void InitializeDriver() {
+		
 		String browserName = "Chrome";
 		if (browserName.equals("Chrome")) {
 		  driver = new ChromeDriver();
@@ -40,15 +42,18 @@ public class BaseTest {
 	public LoginPage lp;
 	public 	HomePage hp;
 	public ExpenseCategoryPage ecp;
+	public  ManagePaymentMethods up;
+	
 	
 	public void InitializePages() {
 		 lp = new LoginPage(driver);
 		 hp = new HomePage(driver);
 		 ecp = new ExpenseCategoryPage(driver);
+		 up= new  ManagePaymentMethods(driver);
 	}
 	
 	@AfterClass
 	public void TearDown() {
-		driver.quit();
+		//driver.quit();
 	}
 }

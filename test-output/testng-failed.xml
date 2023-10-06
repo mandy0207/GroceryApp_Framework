@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsqura.tests.ManageExpense">
+      <class name="com.obsqura.tests.UpdatePayment">
         <methods>
           <include name="TearDown"/>
-          <include name="ManageExpenseTest"/>
+          <include name="UpdateCreditPayment"/>
           <include name="InitializeDriver"/>
         </methods>
-      </class> <!-- com.obsqura.tests.ManageExpense -->
+      </class> <!-- com.obsqura.tests.UpdatePayment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

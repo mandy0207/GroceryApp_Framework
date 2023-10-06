@@ -8,8 +8,8 @@ public class LoginTest extends BaseTest {
 	
 	@Test
 	public void MyLoginTest() {
-		lp.Login();
-			
+		lp.Login();	
+		hp.NavigateToManagePaymentSection();
 	}
 	
 }
