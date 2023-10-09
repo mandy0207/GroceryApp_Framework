@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.obsqura.utilities.PageUtility;
 
-public class ManagePaymentMethods extends PageUtility {
+public class ManagePaymentMethodsPage extends PageUtility {
 
 	WebDriver driver;
 
-	public ManagePaymentMethods(WebDriver driver) {
+	public ManagePaymentMethodsPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

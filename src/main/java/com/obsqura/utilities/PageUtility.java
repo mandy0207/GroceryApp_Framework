@@ -10,7 +10,6 @@ public class PageUtility {
 	public PageUtility(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	public void ClickElement(WebElement element) {
@@ -21,11 +20,11 @@ public class PageUtility {
 		element.clear();
 		element.sendKeys(value);
 	}
+	
 
 	public String GetElemenText(WebElement element) {
 		return element.getText();
 	}
-
 
 	public void AcceptAlert() {
 		Alert alert = driver.switchTo().alert();

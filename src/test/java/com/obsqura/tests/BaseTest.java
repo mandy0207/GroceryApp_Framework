@@ -10,25 +10,25 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import com.obsqura.pages.ExpenseCategoryPage;
 import com.obsqura.pages.HomePage;
+import com.obsqura.pages.ListProductPage;
 import com.obsqura.pages.LoginPage;
-import com.obsqura.pages.ManagePaymentMethods;
+import com.obsqura.pages.ManagePaymentMethodsPage;
 import com.obsqura.utilities.TestProperties;
 
 public class BaseTest {
 	WebDriver driver;
 	Properties prop;
-	@BeforeClass
+	@Parameters({"browserName"})
+	@BeforeClass(alwaysRun=true)
 	public void InitializeDriver() throws IOException {
         prop = TestProperties.GetProperties();
         String browserName =  prop.getProperty("browserName");
         String Environment = prop.getProperty("Environment");
         String URL=prop.getProperty(Environment);
-        
-//		System.out.println("Executing in browser ="+browserName);
-//		System.out.println("Executing in environment ="+ Environment);
 		
 		if (browserName.equals("Chrome")) {
 		  driver = new ChromeDriver();
@@ -48,20 +48,22 @@ public class BaseTest {
 		InitializePages();
 	
 	}
+	
 	public LoginPage lp;
 	public 	HomePage hp;
 	public ExpenseCategoryPage ecp;
-	public  ManagePaymentMethods up;
-	
+	public  ManagePaymentMethodsPage up;
+	public ListProductPage lpp;
 	
 	public void InitializePages() {
 		 lp = new LoginPage(driver);
 		 hp = new HomePage(driver);
 		 ecp = new ExpenseCategoryPage(driver);
-		 up= new  ManagePaymentMethods(driver);
+		 up= new  ManagePaymentMethodsPage(driver);
+		 lpp = new ListProductPage(driver);
 	}
 	
-	@AfterClass
+	@AfterClass(alwaysRun=true)
 	public void TearDown() {
 		driver.quit();
 	}

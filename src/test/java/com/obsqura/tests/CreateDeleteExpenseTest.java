@@ -8,10 +8,10 @@ import com.obsqura.pages.HomePage;
 import com.obsqura.pages.LoginPage;
 import com.obsqura.utilities.DateUtility;
 
-public class CreateDeleteExpense extends BaseTest {
+public class CreateDeleteExpenseTest extends BaseTest {
 
 	
-	@Test
+	@Test(groups="Smoke")
 	public void ManageExpenseTest() {
 		lp.Login();
 		hp.NavigateToManageExpense();

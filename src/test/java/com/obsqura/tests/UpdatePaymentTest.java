@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.obsqura.utilities.GenerateRandomNumber;
 
-public class UpdatePayment extends BaseTest{
+public class UpdatePaymentTest extends BaseTest{
 
 	@Test
 	public void UpdateCreditPayment() {

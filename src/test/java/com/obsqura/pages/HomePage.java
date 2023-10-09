@@ -26,6 +26,9 @@ public class HomePage extends PageUtility{
 	@FindBy(xpath="//p[normalize-space()='Manage Payment Methods']")
 	private WebElement managePaymentMethods;
 	
+	@FindBy(xpath="//a[contains(@class,'nav-link')]//p[contains(text(),'Manage Product')]")
+	private WebElement manageProduct;
+
 	public void NavigateToManageExpense() {
 		ClickElement(manageExpenseBtn);
 		ClickElement(expenseCategory);
@@ -33,5 +36,8 @@ public class HomePage extends PageUtility{
 	}
 	public void NavigateToManagePaymentSection() {
 		ClickElement(managePaymentMethods);
+	}
+	public void NavigateToManageProductSection() {
+		ClickElement(manageProduct);
 	}
 }
