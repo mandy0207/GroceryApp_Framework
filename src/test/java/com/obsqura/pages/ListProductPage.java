@@ -1,10 +1,14 @@
 package com.obsqura.pages;
 
+import java.awt.AWTException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.obsqura.constants.Constants;
 import com.obsqura.utilities.PageUtility;
 
 public class ListProductPage extends PageUtility {
@@ -18,6 +22,7 @@ public class ListProductPage extends PageUtility {
 	}
 
 	// define my locators here
+	By locator = By.xpath("write your xpath here");
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")
 	private WebElement searchBtn;
@@ -40,6 +45,10 @@ public class ListProductPage extends PageUtility {
 	public String validateProductExists() {
 		String productCompleteName=GetElemenText(productTitleColumn);
 	    return productCompleteName.split(" ")[0].trim().toLowerCase();
+	}
+	
+	public void ValidateFileUpload() throws AWTException {
+		 uploadFile(locator, Constants.FILETOUPLOAD);
 	}
 
 }

@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import com.obsqura.Exception.NoBrowserFoundException;
 import com.obsqura.pages.ExpenseCategoryPage;
 import com.obsqura.pages.HomePage;
 import com.obsqura.pages.ListProductPage;
@@ -54,8 +55,10 @@ public class BaseTest {
 			break;
 		case "EDGE":
 			driver = new EdgeDriver();
+			break;
 		default:
-			System.out.println("Choose Right Browser");
+			throw new NoBrowserFoundException("There is no such browser like "+browserName);
+		
 		}
 		return driver;
 	}

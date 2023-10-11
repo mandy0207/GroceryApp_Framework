@@ -1,5 +1,6 @@
 package com.obsqura.tests;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -19,8 +20,11 @@ public class SearchProductTest extends BaseTest {
 		 * Validation
 		 */
 		Assert.assertEquals(actualName, GetProductName());
+		
 
 	}
+	
+
 
 	public String GetProductName() throws IOException {
 		return TestProperties.GetProperties().getProperty("productName");
