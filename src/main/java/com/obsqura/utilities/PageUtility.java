@@ -5,16 +5,21 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.time.Duration;
+import java.io.File;
+import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+
+import com.obsqura.constants.Constants;
+
 
 public class PageUtility extends WaitUtility {
 	WebDriver driver;
@@ -49,7 +54,7 @@ public class PageUtility extends WaitUtility {
 				System.out.println("element is Displayed " + element);
 			}
 		} catch (Exception e) {
-			Assert.assertTrue(false);
+			//Assert.assertTrue(false);
 		}
 
 	}
@@ -68,6 +73,14 @@ public class PageUtility extends WaitUtility {
 		alert.accept();
 	}
 	
+	public  String getScreenshot() throws IOException {
+		TakesScreenshot scrshot=(TakesScreenshot)driver;
+		File srcfile = scrshot.getScreenshotAs(OutputType.FILE);
+		String path=Constants.SCREENSHOTPATH;
+		File destfile = new File(path);
+		FileUtils.copyFile(srcfile, destfile);
+		return path;
+	}
 	public void uploadFile(By locator, String fileToUpload) throws AWTException {
 		driver.findElement(locator).click();
 

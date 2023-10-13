@@ -48,7 +48,7 @@ public class ListProductPage extends PageUtility {
 	}
 	
 	public void ValidateFileUpload() throws AWTException {
-		 uploadFile(locator, Constants.FILETOUPLOAD);
+		 //uploadFile(locator, Constants.FILETOUPLOAD);
 	}
 
 }

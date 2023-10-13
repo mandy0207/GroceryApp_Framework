@@ -1,7 +1,4 @@
 package com.obsqura.utilities;
-
-import org.testng.annotations.Test;
-
 public class GenerateRandomNumber {
 
 	

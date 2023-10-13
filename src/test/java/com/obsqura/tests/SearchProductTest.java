@@ -20,7 +20,7 @@ public class SearchProductTest extends BaseTest {
 		 * Validation
 		 */
 		Assert.assertEquals(actualName, GetProductName());
-		
+		Assert.fail();
 
 	}
 	
