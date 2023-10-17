@@ -10,10 +10,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.obsqura.Exception.NoBrowserFoundException;
+import com.obsqura.constants.WebDriverContext;
 import com.obsqura.pages.ExpenseCategoryPage;
 import com.obsqura.pages.HomePage;
 import com.obsqura.pages.ListProductPage;
@@ -21,9 +23,11 @@ import com.obsqura.pages.LoginPage;
 import com.obsqura.pages.ManagePaymentMethodsPage;
 import com.obsqura.utilities.TestProperties;
 
+
 public class BaseTest {
 	WebDriver driver;
 	Properties prop;
+
 
 	@Parameters({ "browserName" })
 	@BeforeClass(alwaysRun = true)
@@ -38,6 +42,7 @@ public class BaseTest {
 		String URL = prop.getProperty(Environment);
 
 		getDriver(browserName);
+		WebDriverContext.setDriver(driver);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get(URL);

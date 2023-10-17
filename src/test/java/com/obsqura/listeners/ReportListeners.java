@@ -13,29 +13,35 @@ import com.aventstack.extentreports.Status;
 import com.obsqura.utilities.ExtentReoprterNG;
 import com.obsqura.utilities.PageUtility;
 
-public class ReportListeners  implements ITestListener {
+public class ReportListeners implements ITestListener {
     WebDriver driver;
 
 
 	ExtentReports extent =ExtentReoprterNG.GenerateExtentReport();
 	ExtentTest test ;
-	String testName;
+	
 	
 	@Override
 	public void onTestStart(ITestResult result) {
-	    testName = result.getMethod().getMethodName();
+	    String testName = result.getMethod().getMethodName();
 		test=extent.createTest(testName);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-	test.log(Status.PASS, testName+" is Passed");
+	test.log(Status.PASS, result.getMethod().getMethodName()+" is Passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.fail(result.getThrowable());
-	
+		try {
+			test.addScreenCaptureFromPath(PageUtility.getScreenshot(), result.getMethod().getMethodName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	 
 	}
 
 	@Override

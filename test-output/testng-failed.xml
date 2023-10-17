@@ -3,18 +3,8 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="com.obsqura.listeners.ReportListeners"/>
+    <listener class-name="com.obsqura.listeners.MyTransFormer"/>
   </listeners>
-  <test thread-count="5" name="Login Test(failed)">
-    <classes>
-      <class name="com.obsqura.tests.LoginTest">
-        <methods>
-          <include name="TearDown"/>
-          <include name="MyLoginTest"/>
-          <include name="InitializeDriver"/>
-        </methods>
-      </class> <!-- com.obsqura.tests.LoginTest -->
-    </classes>
-  </test> <!-- Login Test(failed) -->
   <test thread-count="5" name="CreateDeleteExpense(failed)">
     <classes>
       <class name="com.obsqura.tests.CreateDeleteExpenseTest">
@@ -26,26 +16,4 @@
       </class> <!-- com.obsqura.tests.CreateDeleteExpenseTest -->
     </classes>
   </test> <!-- CreateDeleteExpense(failed) -->
-  <test thread-count="5" name="UpdatePayment(failed)">
-    <classes>
-      <class name="com.obsqura.tests.UpdatePaymentTest">
-        <methods>
-          <include name="TearDown"/>
-          <include name="UpdateCreditPayment"/>
-          <include name="InitializeDriver"/>
-        </methods>
-      </class> <!-- com.obsqura.tests.UpdatePaymentTest -->
-    </classes>
-  </test> <!-- UpdatePayment(failed) -->
-  <test thread-count="5" name="SearchProduct(failed)">
-    <classes>
-      <class name="com.obsqura.tests.SearchProductTest">
-        <methods>
-          <include name="TearDown"/>
-          <include name="SearchProduct"/>
-          <include name="InitializeDriver"/>
-        </methods>
-      </class> <!-- com.obsqura.tests.SearchProductTest -->
-    </classes>
-  </test> <!-- SearchProduct(failed) -->
 </suite> <!-- Failed suite [Suite] -->

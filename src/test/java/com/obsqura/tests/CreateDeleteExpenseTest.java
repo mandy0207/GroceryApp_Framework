@@ -1,13 +1,10 @@
 package com.obsqura.tests;
-
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.obsqura.pages.ExpenseCategoryPage;
-import com.obsqura.pages.HomePage;
-import com.obsqura.pages.LoginPage;
 import com.obsqura.utilities.DateUtility;
-
+@Listeners({com.obsqura.listeners.ReportListeners.class})
 public class CreateDeleteExpenseTest extends BaseTest {
 
 	
@@ -28,5 +25,6 @@ public class CreateDeleteExpenseTest extends BaseTest {
 		 * Validation for Expense Deletion
 		 */
 		Assert.assertEquals(deletionText,  "Expense Category Deleted Successfully");
+		Assert.fail();
 	}
 }

@@ -4,6 +4,7 @@
 
 <listeners>
 <listener class-name="com.obsqura.listeners.ReportListeners"></listener> 
+<listener class-name="com.obsqura.listeners.MyTransFormer"></listener> 
 </listeners>
   <test  name="Login Test" >
     <classes>

@@ -19,6 +19,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.obsqura.constants.Constants;
+import com.obsqura.constants.WebDriverContext;
 
 
 public class PageUtility extends WaitUtility {
@@ -73,8 +74,8 @@ public class PageUtility extends WaitUtility {
 		alert.accept();
 	}
 	
-	public  String getScreenshot() throws IOException {
-		TakesScreenshot scrshot=(TakesScreenshot)driver;
+	public static String getScreenshot() throws IOException {
+		TakesScreenshot scrshot=(TakesScreenshot)WebDriverContext.getDriver();
 		File srcfile = scrshot.getScreenshotAs(OutputType.FILE);
 		String path=Constants.SCREENSHOTPATH;
 		File destfile = new File(path);
