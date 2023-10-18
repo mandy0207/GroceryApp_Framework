@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsqura.tests.LoginTest">
+      <class name="com.obsqura.utilities.ExcelReaderUtility">
         <methods>
-          <include name="TearDown"/>
-          <include name="MyLoginTest"/>
-          <include name="InitializeDriver"/>
+          <include name="readDataFromExcel"/>
         </methods>
-      </class> <!-- com.obsqura.tests.LoginTest -->
+      </class> <!-- com.obsqura.utilities.ExcelReaderUtility -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

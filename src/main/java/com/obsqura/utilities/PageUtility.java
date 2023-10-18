@@ -11,6 +11,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -39,6 +40,10 @@ public class PageUtility extends WaitUtility {
 		element.click();
 	}
 
+	public void scroll() {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,1000);");
+	}
 
 	public void waitFor() {
 		try {
@@ -52,7 +57,7 @@ public class PageUtility extends WaitUtility {
 		waitFor();
 		try {
 			if (element.isDisplayed()) {
-				System.out.println("element is Displayed " + element);
+				//System.out.println("element is Displayed " + element);
 			}
 		} catch (Exception e) {
 			//Assert.assertTrue(false);

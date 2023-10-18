@@ -29,5 +29,12 @@
       <class name="com.obsqura.tests.SearchProductTest"/>
     </classes>
   </test> 
+  
+   
+      <test  name="CreateContact">
+    <classes>
+      <class name="com.obsqura.tests.CreateContact"/>
+    </classes>
+  </test> 
 </suite> 
 

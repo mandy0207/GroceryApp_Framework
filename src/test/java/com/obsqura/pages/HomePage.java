@@ -29,6 +29,12 @@ public class HomePage extends PageUtility{
 	@FindBy(xpath="//a[contains(@class,'nav-link')]//p[contains(text(),'Manage Product')]")
 	private WebElement manageProduct;
 
+	@FindBy(xpath="//*[contains(text(),'Manage Content')]")
+	private WebElement manageContent ;
+	
+	@FindBy(xpath="//*[contains(text(),'Manage Contact')]")
+	private WebElement manageContact;
+	
 	public void NavigateToManageExpense() {
 		ClickElement(manageExpenseBtn);
 		ClickElement(expenseCategory);
@@ -39,5 +45,9 @@ public class HomePage extends PageUtility{
 	}
 	public void NavigateToManageProductSection() {
 		ClickElement(manageProduct);
+	}
+	public void NavigateToManageContact() {
+		ClickElement(manageContent);
+		ClickElement(manageContact);
 	}
 }

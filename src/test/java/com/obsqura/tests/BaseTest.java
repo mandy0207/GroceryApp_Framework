@@ -10,12 +10,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.obsqura.Exception.NoBrowserFoundException;
 import com.obsqura.constants.WebDriverContext;
+import com.obsqura.pages.ContactUsPage;
 import com.obsqura.pages.ExpenseCategoryPage;
 import com.obsqura.pages.HomePage;
 import com.obsqura.pages.ListProductPage;
@@ -73,17 +73,18 @@ public class BaseTest {
 	public ExpenseCategoryPage ecp;
 	public ManagePaymentMethodsPage up;
 	public ListProductPage lpp;
-
+    public ContactUsPage cp;
 	public void InitializePages() {
 		lp = new LoginPage(driver);
 		hp = new HomePage(driver);
 		ecp = new ExpenseCategoryPage(driver);
 		up = new ManagePaymentMethodsPage(driver);
 		lpp = new ListProductPage(driver);
+		cp = new ContactUsPage(driver);
 	}
 
-	@AfterClass(alwaysRun = true)
-	public void TearDown() {
-		driver.quit();
-	}
+//	@AfterClass(alwaysRun = true)
+//	public void TearDown() {
+//		driver.quit();
+//	}
 }
